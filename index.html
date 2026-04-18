@@ -248,57 +248,58 @@ footer{
 
 <section class="section contact" id="contact">
   <h2>Place Your Order</h2>
-  <form>
-    <input type="text" placeholder="Name">
-    <input type="text" placeholder="Phone">
-    <textarea placeholder="Design"></textarea>
-    <input type="text" placeholder="Date">
-    <button>Order Now</button>
+
+  <form id="orderForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="text" id="phone" placeholder="WhatsApp Number" required>
+    <textarea id="design" placeholder="Describe your design"></textarea>
+    <button type="submit">Order Now</button>
   </form>
+
 </section>
 
-
 <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbz7Osana5xV3IDFb6TubjYrpdUMNzRp2pPzwGl6sPO6sVLndB4XgLaUW3HOEh0x5RY9/exec"; // 🔴 paste here
+const scriptURL = "https://script.google.com/macros/s/AKfycbxYznhyIUyrPw4JsoTAvZM_EVWCR9ro93s7FlvkmgeweMDlE-suqLLWfgPOXZLdg1lR/exec"; // 🔴 paste here
 
 document.getElementById("orderForm").addEventListener("submit", function(e){
   e.preventDefault();
 
-  const formData = {
+  const data = {
     name: document.getElementById("name").value,
     phone: document.getElementById("phone").value,
     design: document.getElementById("design").value
-    date: document.getElementById("date").value
   };
 
   fetch(scriptURL, {
     method: "POST",
-    body: JSON.stringify(formData)
+    body: JSON.stringify(data)
   })
-  .then(response => response.text())
-  .then(data => {
-    showPopup("✅ Order placed successfully! We’ll contact you soon 💅");
+  .then(res => res.text())
+  .then(response => {
+    showPopup("✅ Order placed! Check your email 💅");
     document.getElementById("orderForm").reset();
   })
-  .catch(error => {
-    showPopup("❌ Something went wrong. Try again.");
+  .catch(err => {
+    showPopup("❌ Error! Try again.");
   });
 });
 
-// CUSTOM POPUP (better than alert)
+// Stylish popup
 function showPopup(message) {
-  let popup = document.createElement("div");
-  popup.innerHTML = message;
+  const popup = document.createElement("div");
+  popup.innerText = message;
+
   popup.style.position = "fixed";
   popup.style.top = "50%";
   popup.style.left = "50%";
   popup.style.transform = "translate(-50%, -50%)";
   popup.style.background = "#111";
-  popup.style.padding = "20px 30px";
-  popup.style.borderRadius = "10px";
   popup.style.color = "#fff";
-  popup.style.boxShadow = "0 0 20px rgba(255,182,193,0.6)";
+  popup.style.padding = "20px 30px";
+  popup.style.borderRadius = "12px";
+  popup.style.boxShadow = "0 0 25px rgba(255,182,193,0.6)";
   popup.style.zIndex = "9999";
+  popup.style.fontSize = "16px";
 
   document.body.appendChild(popup);
 
@@ -307,7 +308,7 @@ function showPopup(message) {
   }, 3000);
 }
 </script>
-
+  
 <footer>
   <p>Email: artofnails4@gmail.com</p>
 </footer>
