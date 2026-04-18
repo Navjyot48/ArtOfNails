@@ -2,244 +2,188 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Art Of Nails by Prerna</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<title>Art Of Nails by Prerna</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:linear-gradient(180deg,#0a0a0a,#1a1a1a);
+  color:#fff;
 }
 
-html {
-  scroll-behavior: smooth;
+/* NAVBAR */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 50px;
+  background:rgba(255,182,193,0.08);
+  backdrop-filter:blur(12px);
+  z-index:1000;
 }
 
-body {
-  background: #0a0a0a;
-  color: #f5f5f5;
-  font-family: 'Poppins', sans-serif;
+nav h1{
+  font-family:'Playfair Display';
+  background:linear-gradient(90deg,#ffb6c1,#d4af37);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-/* HEADER */
-header {
-  text-align: center;
-  padding: 30px 20px;
+nav a{
+  color:#eee;
+  margin-left:30px;
+  text-decoration:none;
+  transition:0.3s;
 }
 
-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #ffb6c1; /* baby pink */
-  letter-spacing: 3px;
-}
-
-header p {
-  color: #aaa;
-}
-
-/* NAV */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 15px;
-  background: rgba(255,255,255,0.02);
-}
-
-nav a {
-  text-decoration: none;
-  color: #fff;
-  position: relative;
-  transition: 0.3s;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -5px;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
-  transition: 0.4s;
-}
-
-nav a:hover {
-  color: #d4af37;
-}
-
-nav a:hover::after {
-  width: 100%;
+nav a:hover{
+  color:#ffb6c1;
 }
 
 /* HERO */
-.hero {
-  height: 80vh;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-              url('Logo.jpg') center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  background:
+    radial-gradient(circle at top, rgba(255,182,193,0.2), transparent),
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,1)),
+    url('Logo.jpg') center/cover no-repeat;
 }
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
+.hero h2{
+  font-size:3.5rem;
+  font-family:'Playfair Display';
+  background:linear-gradient(90deg,#ffb6c1,#fff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-.hero-content {
-  max-width: 800px;
-  animation: fadeUp 1.5s ease;
+.hero p{
+  max-width:600px;
+  margin:20px auto;
+  color:#ddd;
+  line-height:1.8;
 }
 
-.hero h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #d4af37;
-  margin-bottom: 20px;
+/* BUTTON */
+.btn{
+  display:inline-block;
+  padding:14px 30px;
+  background:linear-gradient(90deg,#ffb6c1,#f8c8dc);
+  color:black;
+  border-radius:30px;
+  margin-top:20px;
+  text-decoration:none;
+  transition:0.3s;
 }
 
-.hero p {
-  line-height: 1.7;
-  color: #ddd;
+.btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px rgba(255,182,193,0.6);
 }
 
 /* SECTION */
-.section {
-  padding: 80px 20px;
-  text-align: center;
+.section{
+  padding:120px 20px;
+  text-align:center;
 }
 
-.section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  color: #d4af37;
-  margin-bottom: 40px;
+.section h2{
+  font-family:'Playfair Display';
+  color:#ffb6c1;
+  margin-bottom:50px;
 }
 
 /* SERVICES */
-.services {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+.services{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
 }
 
-.card {
-  background: #111;
-  padding: 25px;
-  width: 260px;
-  border-radius: 12px;
-  border: 1px solid rgba(212,175,55,0.2);
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
+.card{
+  width:260px;
+  padding:30px;
+  background:rgba(255,182,193,0.05);
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+  transition:0.4s;
+  border:1px solid rgba(255,182,193,0.1);
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(212,175,55,0.3), transparent);
-  transition: 0.6s;
-}
-
-.card:hover::before {
-  left: 100%;
-}
-
-.card:hover {
-  transform: translateY(-12px) scale(1.03);
-  border-color: #d4af37;
-  box-shadow: 0 10px 30px rgba(212,175,55,0.2);
-}
-
-.card h3 {
-  margin-bottom: 10px;
-}
-
-.card p {
-  color: #aaa;
+.card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 20px 50px rgba(255,182,193,0.2);
 }
 
 /* GALLERY */
-.gallery img {
-  width: 260px;
-  margin: 10px;
-  border-radius: 12px;
-  transition: 0.4s;
-  filter: brightness(0.85);
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
 
-.gallery img:hover {
-  transform: scale(1.08);
-  filter: brightness(1.1);
-  box-shadow: 0 10px 25px rgba(212,175,55,0.3);
+.gallery img{
+  width:100%;
+  border-radius:15px;
+  transition:0.4s;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+  box-shadow:0 15px 40px rgba(255,182,193,0.3);
 }
 
 /* CONTACT */
-.contact form {
-  max-width: 400px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.contact form{
+  max-width:450px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
 }
 
-input, textarea {
-  padding: 12px;
-  background: #111;
-  border: 1px solid #333;
-  color: white;
-  border-radius: 8px;
+input,textarea{
+  padding:14px;
+  background:#111;
+  border:1px solid #333;
+  color:white;
+  border-radius:10px;
 }
 
-button {
-  background: #d4af37;
-  color: black;
-  border: none;
-  padding: 12px;
-  cursor: pointer;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: 0.3s;
+button{
+  background:linear-gradient(90deg,#ffb6c1,#f8c8dc);
+  border:none;
+  padding:14px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-button:hover {
-  background: #f1d67a;
-  transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(212,175,55,0.6);
+button:hover{
+  box-shadow:0 0 20px rgba(255,182,193,0.6);
 }
 
 /* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #777;
-}
-
-/* ANIMATION */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+footer{
+  text-align:center;
+  padding:30px;
+  color:#aaa;
 }
 
 </style>
@@ -247,24 +191,18 @@ footer {
 
 <body>
 
-<header>
-  <h1>Art Of Nails</h1>
-  <p>by Prerna</p>
-</header>
-
 <nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#contact">Order</a>
+  <h1>Art Of Nails by Prerna</h1>
+  <div>
+    <a href="#services">Collection</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Order</a>
+  </div>
 </nav>
 
 <section class="hero">
-  <div class="hero-content">
-
-    <img src="Logo.png" class="logo">
-
-    <h2>Luxury Press-On Nails</h2>
+  <div>
+ <h2>Luxury Press-On Nails</h2>
     <p>
       Art Of Nails by Prerna is a custom press-on nail brand designed to bring salon-quality nails right to your doorstep.
       Each set is handmade with love, creativity, and attention to detail—perfect for every mood, occasion, and style.
@@ -276,59 +214,112 @@ footer {
       💅 Custom sizes & designs <br>
       📦 Delivered to door
     </p>
-
+    <a href="#contact" class="btn">Order Now</a>
   </div>
 </section>
+
   
 <section class="section" id="services">
   <h2>Our Collection</h2>
   <div class="services">
-    <div class="card">
-      <h3>Minimal Nails</h3>
-      <p>Elegant everyday styles with a soft luxury feel.</p>
-    </div>
-    <div class="card">
-      <h3>Bridal Sets</h3>
-      <p>Premium handcrafted nails for your special day.</p>
-    </div>
-    <div class="card">
-      <h3>Trendy Designs</h3>
-      <p>Bold, stylish, Instagram-inspired looks.</p>
-    </div>
-    <div class="card">
-      <h3>Custom Orders</h3>
-      <p>Personalized designs made just for you.</p>
-    </div>
+    <div class="card"><h3>Minimal Nails</h3></div>
+    <div class="card"><h3>Bridal Luxury</h3></div>
+    <div class="card"><h3>Trendy Designs</h3></div>
+    <div class="card"><h3>Custom Sets</h3></div>
   </div>
 </section>
 
-<section class="section gallery" id="gallery">
+<section class="section" id="gallery">
   <h2>Gallery</h2>
-  <img src="10.jpeg">
-  <img src="2.jpeg">
-  <img src="6.jpeg">
-  <img src="7.jpeg">
-  <img src="8.jpeg">
-  <img src="9.jpeg">
-  <img src="5.jpeg">
-  <img src="11.jpeg">
-  <img src="1.jpeg">
-  <img src="3.jpeg">
-  <img src="4.jpeg">
+  <div class="gallery">
+    <img src="10.jpeg"> 
+    <img src="2.jpeg"> 
+    <img src="6.jpeg"> 
+    <img src="7.jpeg"> 
+    <img src="8.jpeg"> 
+    <img src="9.jpeg"> 
+    <img src="5.jpeg"> 
+    <img src="11.jpeg"> 
+    <img src="1.jpeg"> 
+    <img src="3.jpeg">
+    <img src="4.jpeg">
+  </div>
 </section>
 
 <section class="section contact" id="contact">
   <h2>Place Your Order</h2>
   <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="text" placeholder="Phone / WhatsApp" required>
-    <textarea placeholder="Describe your custom design"></textarea>
+    <input type="text" placeholder="Name">
+    <input type="text" placeholder="Phone">
+    <textarea placeholder="Design"></textarea>
+    <input type="text" placeholder="Date">
     <button>Order Now</button>
   </form>
 </section>
 
+<section class="section contact" id="contact">
+  <h2>Place Your Order</h2>
+
+  <form id="orderForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="text" id="phone" placeholder="WhatsApp Number" required>
+    <textarea id="design" placeholder="Describe your design"></textarea>
+    <button type="submit">Order Now</button>
+  </form>
+
+</section>
+
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbz7Osana5xV3IDFb6TubjYrpdUMNzRp2pPzwGl6sPO6sVLndB4XgLaUW3HOEh0x5RY9/exec"; // 🔴 paste here
+
+document.getElementById("orderForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const formData = {
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    design: document.getElementById("design").value
+  };
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify(formData)
+  })
+  .then(response => response.text())
+  .then(data => {
+    showPopup("✅ Order placed successfully! We’ll contact you soon 💅");
+    document.getElementById("orderForm").reset();
+  })
+  .catch(error => {
+    showPopup("❌ Something went wrong. Try again.");
+  });
+});
+
+// CUSTOM POPUP (better than alert)
+function showPopup(message) {
+  let popup = document.createElement("div");
+  popup.innerHTML = message;
+  popup.style.position = "fixed";
+  popup.style.top = "50%";
+  popup.style.left = "50%";
+  popup.style.transform = "translate(-50%, -50%)";
+  popup.style.background = "#111";
+  popup.style.padding = "20px 30px";
+  popup.style.borderRadius = "10px";
+  popup.style.color = "#fff";
+  popup.style.boxShadow = "0 0 20px rgba(255,182,193,0.6)";
+  popup.style.zIndex = "9999";
+
+  document.body.appendChild(popup);
+
+  setTimeout(() => {
+    popup.remove();
+  }, 3000);
+}
+</script>
+
 <footer>
-  <p>© 2026 Art Of Nails by Prerna — Luxury in Every Detail</p>
+  <p>Email: artofnails4@gmail.com</p>
 </footer>
 
 </body>
